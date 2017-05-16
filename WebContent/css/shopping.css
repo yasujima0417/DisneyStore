@@ -1,0 +1,222 @@
+html, body {
+    width: 100%;
+    background-image: url(C:/Users/ALJEP008/Desktop/hosi.jpg);
+    font-family: Meiryo, sans-serif;
+}
+
+header {
+    width: 90%;
+    text-align: right;
+    margin:1rem auto;
+}
+
+main {
+    width: 90%;
+    margin:1rem auto;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.title {
+    background-color:  #eee;
+    padding: .2rem;
+    border : .2rem solid #ccc;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+.buttons{
+    display: block;
+    width: 33%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+table.table_form {
+    background: hsl(0, 0%, 97%);
+    padding: .1rem;
+    margin : 1rem auto;
+    border : .2rem solid #ccc;
+}
+
+.shopping_table {
+    width: 100%;
+    margin: 1rem auto;
+    table-layout: fixed;
+    word-wrap   : break-word;
+    border : .2rem solid #ccc;
+    background-color: hsl(0, 0%, 97%);
+}
+
+th,td {
+    border : .2rem solid #ccc;
+}
+
+.int {
+    text-align: right;
+}
+
+.button {
+    text-align: center;
+}
+
+.list {
+    width  : 90%;
+    margin: 1rem auto;
+}
+
+div.login_pane {
+    background: hsl(0, 0%, 97%);
+    width  : 500px;
+    padding: 1rem;
+    margin : 2rem auto;
+    border : 1px solid #ccc;
+}
+
+.common_button {
+    display: inline-block;
+    font-size : 1rem;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin : 1rem auto;
+    border-radius   : .5rem;
+    background-color: #49a9d4;
+    color: hsl(0, 0%, 97%);
+}
+
+
+
+html,
+body {
+  min-height: 100%;
+  font-family: Oxygen;
+  font-weight: 300;
+  font-size: 1em;
+  color: #fff;
+}
+
+.signin {
+  display: block;
+  position: relative;
+  width: 250px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 1px 1px 0 0 rgba(255,255,255,0.2), inset -1px -1px 0 0 rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 1px 1px 0 0 rgba(255,255,255,0.2), inset -1px -1px 0 0 rgba(0,0,0,0.2);
+  box-shadow: inset 1px 1px 0 0 rgba(255,255,255,0.2), inset -1px -1px 0 0 rgba(0,0,0,0.2);
+}
+.signin .avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 35px auto;
+  border: 5px solid #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  pointer-events: none;
+}
+.signin .avatar:before {
+  content: "A";
+  text-align: center;
+  font-family: Ionicons;
+  display: block;
+  height: 100%;
+  line-height: 100px;
+  font-size: 5em;
+}
+.signin .inputrow {
+  position: relative;
+}
+.signin .inputrow label {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+.signin .inputrow label:before {
+  color: #538a9a;
+  opacity: 0.4;
+  -webkit-transition: opacity 300ms 0 ease;
+  -moz-transition: opacity 300ms 0 ease;
+  transition: opacity 300ms 0 ease;
+}
+.signin input[type="text"],
+.signin input[type="password"] {
+  padding: 10px 12px 10px 32px;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255,255,255,0.5);
+  background-color: #fff;
+  color: #333;
+  font-size: 1em;
+  font-weight: 300;
+  outline: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: border-color 300ms 0 ease;
+  -moz-transition: border-color 300ms 0 ease;
+  transition: border-color 300ms 0 ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.signin input[type="text"]:focus + label:before,
+.signin input[type="password"]:focus + label:before {
+  opacity: 1;
+}
+.signin input[type="submit"] {
+  -webkit-appearance: none;
+  height: 40px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  background-color: #538a9a;
+  text-transform: uppercase;
+  color: #fff;
+  border: 0px;
+  float: right;
+  margin: 0;
+  outline: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.signin input[type="submit"]:hover {
+  background-color: #5e98a8;
+}
+.signin input[type="submit"]:active {
+  background-color: #4a7b89;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+span.midasi{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
