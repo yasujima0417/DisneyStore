@@ -34,7 +34,7 @@ public class BuyItemServlet extends HttpServlet {
      * @throws java.io.IOException
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         // GETメソッドのパラメータ名を取得
@@ -78,6 +78,6 @@ public class BuyItemServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     }
 }

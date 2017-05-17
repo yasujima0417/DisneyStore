@@ -30,7 +30,7 @@
                     <%-- リクエストスコープから表示する値を取得 --%>
                     <td><jsp:getProperty name="item_bean" property="itemId" /></td>
                     <td><jsp:getProperty name="item_bean" property="itemName" /></td>
-                    <td><jsp:getProperty name="item_bean" property="itemImage"/></td>
+                    <td><img src="img/<jsp:getProperty name="item_bean" property="itemImg"/>" width=100%/></td>
                     <td class="int"><jsp:getProperty name="item_bean" property="price" /></td>
                     <td class="int"><jsp:getProperty name="item_bean" property="quantity" /></td>
                     <td class="int"><%=request.getAttribute("purchased_num")%></td>

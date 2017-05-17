@@ -1,10 +1,18 @@
-html, body {
-    width: 100%;
-    background-image: url(C:/Users/ALJEP008/Desktop/hosi.jpg);
+ body{
+	background-image:url(C:/Users/ALJEP008/Desktop/hosi.jpg);
+}
+ body.login {
+
+    background-image: url(C:/Users/ALJEP008/Desktop/disney.jpg);
+    background-repeat:no-repeat;
+    background-size:100%;
     font-family: Meiryo, sans-serif;
 }
 
-header {
+img.headerimg{
+	text-align:left;
+}
+span.header {
     width: 90%;
     text-align: right;
     margin:1rem auto;
@@ -123,7 +131,7 @@ body {
   width: 100px;
   height: 100px;
   margin: 0 auto 35px auto;
-  border: 5px solid #fff;
+  border: 5px solid #ff0000;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -132,13 +140,13 @@ body {
   pointer-events: none;
 }
 .signin .avatar:before {
-  content: "A";
+  content:"K" ;
   text-align: center;
-  font-family: Ionicons;
+  font-family: Mickey Mousebats;
   display: block;
   height: 100%;
-  line-height: 100px;
-  font-size: 5em;
+  line-height: 110px;
+  font-size: 4em;
 }
 .signin .inputrow {
   position: relative;
@@ -215,8 +223,17 @@ body {
 .cf {
   *zoom: 1;
 }
+body{
+	color:black;
+}
 span.midasi{
 	display: inline-block;
 	width: 100%;
 	text-align: center;
+	color:yellow;
+	font-family:LMS Beyond Infinity;
+}
+
+span.disney{
+	color:white;
 }

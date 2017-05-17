@@ -82,7 +82,7 @@ public class Shopping {
                 int price = rs.getInt("price");
                 // 商品数を設定
                 int quantity = rs.getInt("quantity");
-                item_bean = new ItemBean(item_id, item_name,item_img, price, quantity);
+                item_bean = new ItemBean(item_id,item_name,item_img, price, quantity);
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -57,7 +57,7 @@ public class ShoppingDao {
     public ResultSet selectItem(String item_id) throws SQLException {
         // SQL文を生成
         this.ps_ = this.con_.prepareStatement(
-                "select item.item_name,item.item_img item.price, stock.quantity from item inner join stock on item.item_id = stock.item_id where item.item_id = ?"
+                "select item.item_name,item.item_img, item.price, stock.quantity from item inner join stock on item.item_id = stock.item_id where item.item_id = ?"
         );
         // SQL文に商品IDを設定
         this.ps_.setString(1, item_id);
@@ -117,7 +117,6 @@ public class ShoppingDao {
     public void updateHistory(String user_id, String item_id, int purchased_num) throws SQLException {
          // SQL文を生成
         this.ps_ = this.con_.prepareStatement("insert into history(id, item_id, quantity) values (?, ?, ?)");
-
         this.ps_.setString(1, user_id);
         this.ps_.setString(2, item_id);
         this.ps_.setInt(3, purchased_num);

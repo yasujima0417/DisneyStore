@@ -15,11 +15,11 @@
 		<link href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
     </head>
 
-    <body>
+    <body class="login">
         <main class="login_pane">
         	<span class="midasi">
             <span class="fa fa-star-o fa-3x fa-spin" aria-hidden="true" ></span>
-            <font size=1000px;>Welcome to DisneyStore</font>
+            <span class="disney"><font size=1000px;>DisneyStore</font></span>
             <span class="fa fa-star-o fa-3x fa-spin" aria-hidden="true"></span>
             </span>
 			<div class="signin cf">

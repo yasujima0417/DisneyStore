@@ -6,10 +6,15 @@
 <%-- header --%>
 <header>
     <%-- ログイン済みの場合はID を表示 --%>
-    <p>
+
+    <img class="headerimg" width=20% src="img/disneystore.png">
+
+    <span class="header">
+
         Welcome「<jsp:getProperty name="login_user_bean" property="name" />」さん！
         <%-- Getのクエリで購入履歴かログアウトか判断させる --%>
         <a href="ShoppingServlet?submit=history">購入履歴</a>
         <a href="LoginServlet?submit=logout">ログアウト</a>
-    </p>
+
+    </span>
 </header>
