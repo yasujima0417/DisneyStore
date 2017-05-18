@@ -1,9 +1,9 @@
  body{
-	background-image:url(C:/Users/ALJEP008/Desktop/hosi.jpg);
+
 }
  body.login {
 
-    background-image: url(C:/Users/ALJEP008/Desktop/disney.jpg);
+    background-image: url(http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1463772645/Disney-World-Summer-NEWEXP0516.jpg?itok=hfktl8WL);
     background-repeat:no-repeat;
     background-size:100%;
     font-family: Meiryo, sans-serif;
@@ -131,7 +131,7 @@ body {
   width: 100px;
   height: 100px;
   margin: 0 auto 35px auto;
-  border: 5px solid #ff0000;
+  border: 5px solid #ff2020;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -235,7 +235,13 @@ span.midasi{
 }
 
 span.disney{
-	color:white;
+	color: #FFF;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 1px #ff8000,
+    -2px 2px 1px #f00,
+    2px -2px 1px #f00,
+    -2px -2px 1px #f00;;
 }
 #slider-text{
   padding-top: 40px;

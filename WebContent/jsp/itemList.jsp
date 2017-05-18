@@ -28,15 +28,15 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="http://www.childrens-rooms.co.uk/childrensrooms-web/v2/images/products/viewproduct_popup/4078_add2.jpg"width=100%>
-      <div class="carousel-caption">
-          <h3>Minny</h3>
-      </div>
-    </div>
-    <div class="item">
       <img src="http://www.saxplicitsolutions.com/wpw/wp-content/uploads/2016/05/90-037.jpg" width=100%>
       <div class="carousel-caption">
           <h3>Poo</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://www.childrens-rooms.co.uk/childrensrooms-web/v2/images/products/viewproduct_popup/4078_add2.jpg"width=100%>
+      <div class="carousel-caption">
+          <h3>Minyy</h3>
       </div>
     </div>
     <div class="item">
