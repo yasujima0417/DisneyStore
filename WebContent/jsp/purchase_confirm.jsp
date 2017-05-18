@@ -13,7 +13,7 @@
 
 <main>
     <h1>購入確認</h1>
-    <p>次の商品を購入しますか？</p>
+    <h2>次の商品を購入しますか？</h2>
 
     <form action="./ResultServlet" method="post">
         <table class="shopping_table">
