@@ -18,6 +18,96 @@
 <body>
 <%-- TODO:2-1 jsp:includeでヘッダー画面を読み込む --%>
 <jsp:include page="header.jsp"></jsp:include>
+ <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="http://www.childrens-rooms.co.uk/childrensrooms-web/v2/images/products/viewproduct_popup/4078_add2.jpg"width=100%>
+      <div class="carousel-caption">
+          <h3>Minny</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://www.saxplicitsolutions.com/wpw/wp-content/uploads/2016/05/90-037.jpg" width=100%>
+      <div class="carousel-caption">
+          <h3>Poo</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://www.tapethuset.dk/image/cache/catalog/produkter/90-039_Fairies_Fairytale_Garden_Border-1200x1200.jpg"width=100%>
+      <div class="carousel-caption">
+          <h3>TinkerBell</h3>
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
+
+    <main>
+        <h1>Item List</h1>
+    <%-- リクエストスコープからBeanクラスの配列を取得 --%>
+    <% ArrayList<ItemBean> itemList = (ArrayList<ItemBean>) request.getAttribute("itemList"); %>
+
+    <form action="./BuyItemServlet">
+        <table class="shopping_table">
+            <tbody>
+                <tr>
+                    <th>商品ID</th>
+                    <th>商品名</th>
+                    <th>商品画像</th>
+                    <th>価格</th>
+                    <th>在庫数</th>
+                    <th>数量</th>
+                </tr>
+
+                <%-- Beanの要素数分（商品の種類分）テーブルを作成 --%>
+                <% for (ItemBean bean : itemList) {%>
+                <tr>
+                    <%-- 商品ID --%>
+                    <td><%= bean.getItemId()%></td>
+                    <%-- 商品名 --%>
+                    <td><%= bean.getItemName()%></td>
+                    <td><img src="img/<%= bean.getItemImg() %>" width=100% class="img-responsive" /></td>
+                    <%-- 価格 --%>
+                    <td class="int"><%= bean.getPrice()%></td>
+                    <%-- 数量（在庫） --%>
+                    <td class="int"><%= bean.getQuantity()%></td>
+
+                    <%-- TODO:2-2 在庫が0の場合はリストボックスと購入ボタンを表示しない処理を入れる --%>
+                    <% if (bean.getQuantity() != 0) {%>
+                    <td>
+                        <select class="list" name="<%= bean.getItemId()%>list">
+                            <% for (int i = 1; i <= bean.getQuantity(); i++) {%>
+                            <option value="<%= i%>"><%= i%></option>
+                            <% }%>
+                        </select>
+                    </td>
+                    <td class="button">
+                        <input class="common_button" type="submit" value="購入" name="<%= bean.getItemId()%>">
+                    </td>
+                    <% } else { %>
+                    <td class="button">売り切れ！</td>
+                    <% } %>
+                </tr>
+                <% }%>
+            </tbody>
+        </table>
+
+        <a class="common_button" href="./">戻る</a>
+    </form>
+</main>
 <div class="slider">
 <div class="container">
   <div class="row" id="slider-text">
@@ -96,6 +186,27 @@
   </div>
 </div>
 </div>
+<br />
+
+ <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-xs-7">
+<div class="css">
+Disney.jp公式アカウント
+        <a href="http://store.disney.co.jp/redirect/tp_out.html?destination=https://www.facebook.com/DisneyJapan"><button type="button" class="btn btn-primary btn-xs"><i class="fa fa-facebook"></i> facebook</button></a>
+
+        <a href="http://store.disney.co.jp/redirect/tp_out.html?destination=https://twitter.com/disneyjp"><button type="button" class="btn btn-info btn-xs"><i class='fa fa-twitter'></i> Twitter</button></a>
+
+		<a href="http://store.disney.co.jp/redirect/tp_out.html?destination=https://www.youtube.com/user/disneyjp"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-youtube"></i> YouTube</button></a>
+
+
+        </div>
+</div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa” crossorigin="anonymous"></script>
 <script type="text/javascript">$(document).ready(function(){
 
 	$('#itemslider').carousel({ interval: 3000 });
@@ -117,60 +228,5 @@
 	});
 	});
 </script>
-    <main>
-        <h1>商品一覧</h1>
-    <%-- リクエストスコープからBeanクラスの配列を取得 --%>
-    <% ArrayList<ItemBean> itemList = (ArrayList<ItemBean>) request.getAttribute("itemList"); %>
-
-    <form action="./BuyItemServlet">
-        <table class="shopping_table">
-            <tbody>
-                <tr>
-                    <th>商品ID</th>
-                    <th>商品名</th>
-                    <th>商品画像</th>
-                    <th>価格</th>
-                    <th>在庫数</th>
-                    <th>数量</th>
-                </tr>
-
-                <%-- Beanの要素数分（商品の種類分）テーブルを作成 --%>
-                <% for (ItemBean bean : itemList) {%>
-                <tr>
-                    <%-- 商品ID --%>
-                    <td><%= bean.getItemId()%></td>
-                    <%-- 商品名 --%>
-                    <td><%= bean.getItemName()%></td>
-                    <td><img src="img/<%= bean.getItemImg() %>" width=100% class="img-responsive" /></td>
-                    <%-- 価格 --%>
-                    <td class="int"><%= bean.getPrice()%></td>
-                    <%-- 数量（在庫） --%>
-                    <td class="int"><%= bean.getQuantity()%></td>
-
-                    <%-- TODO:2-2 在庫が0の場合はリストボックスと購入ボタンを表示しない処理を入れる --%>
-                    <% if (bean.getQuantity() != 0) {%>
-                    <td>
-                        <select class="list" name="<%= bean.getItemId()%>list">
-                            <% for (int i = 1; i <= bean.getQuantity(); i++) {%>
-                            <option value="<%= i%>"><%= i%></option>
-                            <% }%>
-                        </select>
-                    </td>
-                    <td class="button">
-                        <input class="common_button" type="submit" value="購入" name="<%= bean.getItemId()%>">
-                    </td>
-                    <% } else { %>
-                    <td class="button">売り切れ！</td>
-                    <% } %>
-                </tr>
-                <% }%>
-            </tbody>
-        </table>
-        <a class="common_button" href="./">戻る</a>
-    </form>
-</main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa” crossorigin="anonymous"></script>
 </body>
 </html>
