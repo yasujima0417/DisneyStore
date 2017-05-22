@@ -4,8 +4,8 @@
 <%-- header --%>
 
     <%-- ログイン済みの場合はID を表示 --%>
-
-    <nav class="navbar navbar-default ">
+	<a href="http://localhost:8080/DisneyStore/index.jsp"><img class="hidden-xs" width=15%   src="img/disneystore.png" style="margin-left:40% "></a>
+    <nav class="navbar navbar-default" style="background:#db0000; color:white; link:white;" >
     <span>
        <div class="container-fluid">
        <div class="navbar-header">
@@ -24,7 +24,6 @@
             <li><a href="#">カテゴリから探す</a></li>
             <li><a href="#">特集から探す</a></li>
         </ul>
-        <a href="http://localhost:8080/DisneyStore/index.jsp"><img class="hidden-xs" width=15%  src="img/disneystore.png"></a>
         <form class="navbar-form navbar-right">
 	   Welcome「<jsp:getProperty name="login_user_bean" property="name" />」さん！
         <%-- Getのクエリで購入履歴かログアウトか判断させる --%>

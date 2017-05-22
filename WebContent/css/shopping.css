@@ -17,7 +17,9 @@ span.header {
     text-align: right;
     margin:1rem auto;
 }
-
+footer .line a{
+	color: black;
+}
 main {
     width: 90%;
     margin:1rem auto;
@@ -410,4 +412,6 @@ span.disney{
     left: 0;
   }
 }
-
+.navbar{
+	background-color: #db0000;
+}

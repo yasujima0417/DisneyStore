@@ -66,6 +66,23 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         RequestDispatcher rd;
 
+        if (btn.equals("登録")) {
+        	String userId = request.getParameter("userId");
+            System.out.println(userId);
+            String userPassword = request.getParameter("userPassword");
+            System.out.println(userPassword);
+            String userName = request.getParameter("userName");
+            System.out.println(userName);
+            int userOld = Integer.parseInt(request.getParameter("userOld"));
+            System.out.println(userOld);
+
+        	LoginDB login = new LoginDB();
+        	login.insertUserData(userId,userPassword,userName,userOld);
+        	rd=request.getRequestDispatcher("./");
+        	rd.forward(request, response);
+        }else {
+
+
         if (btn.equals("ログイン")) {
             // ③-1-1 ログイン画面で入力されたIDとパスワードを取得
             String id = request.getParameter("id");
@@ -103,5 +120,6 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("./");
         }
 
+        }
     }
 }

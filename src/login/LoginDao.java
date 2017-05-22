@@ -52,6 +52,16 @@ public class LoginDao {
         return this.rs_;
     }
 
+    public void insertUserData(String userId,String userPassword,String userName,int userOld)throws SQLException {
+    	System.out.println(userId);
+    	this.ps_ = this.con_.prepareStatement("insert into user(id, name, pass, age) values (?,?,?,?)");
+    	this.ps_.setString(1, userId);
+    	this.ps_.setString(2, userName);
+    	this.ps_.setString(3, userPassword);
+    	this.ps_.setInt(4, userOld);
+    	System.out.println(ps_);
+    	this.ps_.executeUpdate();
+    }
     /**
      * コネクションをクローズします.
      */
