@@ -69,16 +69,22 @@ public class ShoppingServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         // 商品一覧を取得
-        Shopping shopping = new Shopping();
-        ArrayList<ItemBean> item_list = shopping.getItem();
-        System.out.println("item_list" + item_list);
 
-        // 商品一覧をリクエストスコープの属性にセット
-        request.setAttribute("itemList", item_list);
 
-        // 商品一覧画面に移動
-        RequestDispatcher rd = request.getRequestDispatcher("./jsp/itemList.jsp");
-        rd.forward(request, response);
+
+        	Shopping shopping = new Shopping();
+        	ArrayList<ItemBean> item_list = shopping.getItem();
+            System.out.println("item_list" + item_list);
+
+            // 商品一覧をリクエストスコープの属性にセット
+
+
+
+            request.setAttribute("itemList", item_list);
+
+            RequestDispatcher rd = request.getRequestDispatcher("./jsp/itemList.jsp");
+            rd.forward(request, response);
+
     }
 
     /**

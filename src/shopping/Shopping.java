@@ -94,6 +94,39 @@ public class Shopping {
         }
         return item_bean;
     }
+    public ArrayList<ItemBean> getCategory(String category){
+    	ArrayList<ItemBean> bean_list = new ArrayList<>();
+    	ItemBean item_bean = null;
+    	ShoppingDao dao = null;
+    	ResultSet rs;
+
+    	try{
+    		dao = new ShoppingDao();
+    		rs=dao.selectItemCategory(category);
+
+    		while(rs.next()){
+    			String item_id = rs.getString("item_id");
+    			System.out.println("category"+item_id);
+    			String item_name = rs.getString("item_name");
+    			System.out.println("category"+item_name);
+    			String item_img = rs.getString("item_img");
+    			System.out.println("category"+item_img);
+    			int price = rs.getInt("price");
+    			System.out.println("category"+price);
+    			int quantity = rs.getInt("quantity");
+    			System.out.println("試験:"+quantity);
+    			item_bean = new ItemBean(item_id,item_name,item_img,price,quantity);
+    			bean_list.add(item_bean);
+    		}
+    	}catch(SQLException e){
+    		e.printStackTrace();
+    	}finally {
+			if(dao != null){
+				dao.close();
+			}
+		}
+    	return bean_list;
+    }
 
     /**
      * 購入履歴のリストを返却

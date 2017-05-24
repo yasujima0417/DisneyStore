@@ -11,6 +11,7 @@ public class ItemBean implements Serializable {
     private String item_img_;
     private int price_;
     private int quantity_;
+    private String category_;
 
     public ItemBean() {
         this.item_id_ = "";
@@ -18,6 +19,7 @@ public class ItemBean implements Serializable {
         this.item_img_ = "";
         this.price_ = 0;
         this.quantity_ = 0;
+        this.category_ = "";
     }
 
     public ItemBean(String item_id, String item_name,String item_img, int price, int quantity) {
@@ -31,6 +33,18 @@ public class ItemBean implements Serializable {
         System.out.println(price_);
         this.quantity_ = quantity;
         System.out.println(quantity_);
+
+    }
+    public ItemBean(String category,String item_id, String item_name,String item_img, int price,int quantity){
+    	this.category_ = category;
+    	this.item_id_ = item_id;
+        System.out.println(item_id_);
+        this.item_name_ = item_name;
+        System.out.println(item_name_);
+        this.item_img_ = item_img;
+        System.out.println(item_img_);
+        this.price_ = price;
+        System.out.println(price_);
     }
 
     public void setItemId(String item_id) {
@@ -72,5 +86,10 @@ public class ItemBean implements Serializable {
     public int getQuantity() {
         return this.quantity_;
     }
-
+    public void setCategory(String category){
+    	this.category_=category;
+    }
+    public String getCategory(){
+    	return this.category_;
+    }
 }

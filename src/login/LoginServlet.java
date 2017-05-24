@@ -61,10 +61,19 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        String btn = request.getParameter("submit");
+        String btn = request.getParameter("submit123");
+        System.out.println(btn);
 
         HttpSession session = request.getSession();
         RequestDispatcher rd;
+        //String category;
+        /*session.setAttribute("category", null);
+        if (btn.equals("ファッション")||btn.equals("雑貨")||btn.equals("ぬいぐるみ")) {
+        	category=btn;
+        	session.setAttribute("category", category);
+			rd=request.getRequestDispatcher("ShoppingServlet");
+			rd.forward(request, response);
+		}*/
 
         if (btn.equals("登録")) {
         	String userId = request.getParameter("userId");

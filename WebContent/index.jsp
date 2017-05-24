@@ -36,11 +36,11 @@
 
 					<a href=jsp/user_registration.jsp>新規登録</a>
 
-                    <input class="common_button" type="submit" name="submit"  value="ログイン"/>
+                    <input class="common_button" type="submit" name="submit123"  value="ログイン"/>
 
                     <%-- ログイン済みの場合はログアウトボタンを表示 --%>
                     <% if ("login".equals(session.getAttribute("login_state"))) { %>
-                    <input class="common_button" type="submit" name="submit" value="ログアウト"/>
+                    <input class="common_button" type="submit" name="submit123" value="ログアウト"/>
                     <% }%>
 
             </form>

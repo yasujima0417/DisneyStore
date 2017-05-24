@@ -66,6 +66,31 @@ public class ShoppingDao {
 
         return this.rs_;
     }
+    public ResultSet selectItemCategory(String category)throws SQLException{
+    	this.ps_ = this.con_.prepareStatement(
+                "select * from item inner join stock on item.item_id = stock.item_id where item.category = ?"
+
+        );
+        // SQL文に商品IDを設定
+        this.ps_.setString(1, category);
+        // SQLを実行
+        this.rs_ = this.ps_.executeQuery();
+        System.out.println("商品一覧"+rs_);
+
+        return this.rs_;
+    }
+    public ResultSet selectItemCategory(String item_id,String category) throws SQLException {
+        // SQL文を生成
+        this.ps_ = this.con_.prepareStatement(
+                "select item.item_name,item.item_img, item.price, stock.quantity from item inner join stock on item.item_id = stock.item_id where item.item_id = ?"
+        );
+        // SQL文に商品IDを設定
+        this.ps_.setString(1, item_id);
+        // SQLを実行
+        this.rs_ = this.ps_.executeQuery();
+
+        return this.rs_;
+    }
 
     /**
      * ユーザの購入履歴を取得します.

@@ -285,6 +285,33 @@
 							});
 				});
 	</script>
+	<script>
+$(document).ready(function(){
+	$("#home").click(function(){
+		console.log("click");
+		$("#form4").submit();
+	});
+	$("#fassion").click(function(){
+		console.log("click");
+		$("#form1").submit();
+	});
+	$("#zakka").click(function(){
+		console.log("click");
+		$("#form2").submit();
+	});
+	$("#nuigurumi").click(function(){
+		console.log("click");
+		$("#form3").submit();
+	});
+
+});
+</script>
+<br/>
+<br/>
+<div style="overflow: hidden; position: relative;">
+<p style="text-align:center;"><img src="http://www.disney.co.jp/content/dam/disney/images/studio/beautyandbeast/logo/logo_bb_01.png" width=25% style=" position: absolute;left: 10%;top: 25%;"/><iframe width="660" height="415" src="https://www.youtube.com/embed/Yxhgx-PBF88" frameborder="0" allowfullscreen style="margin-left:35%;"></iframe></p>
+</div>
+
 </body>
 <footer class="bg-danger">
 	<div class="footermenu">
