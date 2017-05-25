@@ -1,6 +1,215 @@
- body{
-
+ /* gatefold */
+.gatefold {
+	width: 100%;
+	height: 100%;
 }
+
+.gatefold::before,
+.gatefold::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background: url(http://i1.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/Walt-Disney-Studios.jpg) top center no-repeat;
+	background-size: cover;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+	z-index: 1;
+}
+
+.gatefold::before {
+	left: 0;
+	clip: rect(0px 50vw 100vh 0px);
+}
+
+.gatefold::after {
+	right: 0;
+	clip: rect(0px 100vw 100vh 50vw);
+}
+
+/* contents */
+.header,
+.contents,
+.footer {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 80px 0;
+	text-align: center;
+}
+
+.contents {
+	padding: 0;
+}
+
+.contents__inner {
+	box-sizing: border-box;
+	max-width: 680px;
+	height: 100%;
+	margin: 40px auto 0;
+	padding: 20px;
+	text-align: left;
+	background: #eee;
+}
+
+.contents__inner h2 {
+	padding: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: 1px solid #666;
+}
+
+.btn__box {
+	text-align: center;
+}
+
+.btn__box a {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	margin: 0 auto;
+	line-height: 50px;
+	font-size: 13px;
+	color: #000;
+	border: 1px solid #000;
+}
+
+/* checkbox */
+.check {
+	display: none;
+}
+
+.switch {
+	position: fixed;
+	left: 0;
+	right: 0;
+	width: 300px;
+	height: 140px;
+	margin: auto;
+	font-size: 80px;
+	font-family:"Wicked Mouse";
+
+	text-align: center;
+	cursor: pointer;
+	text-shadow: 5px 5px 10px rgba(0,0,0,.8);
+	color: #fff;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+	visibility: visible;
+	opacity: 1;
+	z-index: 2;
+}
+
+.switch.slide {
+	top: 10%;
+}
+.switch.slide::before {
+	content: 'slide';
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+.switch.fade {
+	top: 30%;
+}
+.switch.fade::before {
+	content: 'fade';
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+.switch.push {
+	top: 60%;
+}
+.switch.push::before {
+	content: 'Welcome';
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+.switch.pull {
+	top: 70%;
+}
+.switch.pull::before {
+	content: 'pull';
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+.check.slide:checked ~ .switch.slide::before,
+.check.fade:checked ~ .switch.fade::before,
+.check.push:checked ~ .switch.push::before,
+.check.pull:checked ~ .switch.pull::before {
+	content: 'close';
+	opacity: .3;
+}
+.check.slide:checked ~ .switch.push,
+.check.slide:checked ~ .switch.fade,
+.check.slide:checked ~ .switch.pull,
+.check.fade:checked ~ .switch.slide,
+.check.fade:checked ~ .switch.push,
+.check.fade:checked ~ .switch.pull,
+.check.push:checked ~ .switch.slide,
+.check.push:checked ~ .switch.fade,
+.check.push:checked ~ .switch.pull,
+.check.pull:checked ~ .switch.slide,
+.check.pull:checked ~ .switch.fade,
+.check.pull:checked ~ .switch.push {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.check.slide:checked ~ .gatefold::before {
+	-webkit-transform: translate3d(-550px,0,0);
+	transform: translate3d(-550px,0,0);
+}
+.check.slide:checked ~ .gatefold::after {
+	-webkit-transform: translate3d(550px,0,0);
+	transform: translate3d(550px,0,0);
+}
+
+.check.fade:checked ~ .gatefold::before {
+	-webkit-transform: translate3d(-550px,0,0);
+	transform: translate3d(-550px,0,0);
+	opacity: 0;
+}
+.check.fade:checked ~ .gatefold::after {
+	-webkit-transform: translate3d(550px,0,0);
+	transform: translate3d(550px,0,0);
+	opacity: 0;
+}
+
+.check.push ~ .gatefold::before,
+.check.pull ~ .gatefold::before {
+	-webkit-transform-origin: left center;
+	-ms-transform-origin: left center;
+	transform-origin: left center;
+}
+.check.push ~ .gatefold::after,
+.check.pull ~ .gatefold::after {
+	-webkit-transform-origin: right center;
+	-ms-transform-origin: right center;
+	transform-origin: right center;
+}
+
+.check.push:checked ~ .gatefold::before {
+	-webkit-transform: perspective(1500px) rotateY(50deg);
+	transform: perspective(1500px) rotateY(50deg);
+}
+.check.push:checked ~ .gatefold::after {
+	-webkit-transform: perspective(1500px) rotateY(-50deg);
+	transform: perspective(1500px) rotateY(-50deg);
+}
+
+.check.pull:checked ~ .gatefold::before {
+	-webkit-transform: perspective(1500px) rotateY(-80deg);
+	transform: perspective(1500px) rotateY(-80deg);
+}
+.check.pull:checked ~ .gatefold::after {
+	-webkit-transform: perspective(1500px) rotateY(80deg);
+	transform: perspective(1500px) rotateY(80deg);
+}
+
  body.login {
 
     background-image: url(http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1463772645/Disney-World-Summer-NEWEXP0516.jpg?itok=hfktl8WL);
