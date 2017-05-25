@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Insert title here</title>
+		<title>【非公式】DisneyStore</title>
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://store.disney.co.jp/favicons/favicon.ico"/>
 		<link href="css/shopping.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -27,7 +28,7 @@
 	<!--  <div style="background-color: rgba(255, 255, 255, 0.8); background-size: 100%; margin-left: 320px; margin-right: 320px; padding-top: 1px; margin-top: 30px;">-->
 		<div class="container-fluid" >
 			<div class="row">
-				<div class="col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10" style="background:rgba(255,255,255,0.8);margin-top:2%;">
+				<div class="col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10" style="background:rgba(255,255,255,0.8);margin-top:5%;padding-top:2%;">
 					<form role="form" action="../LoginServlet" method="post"
 						class="form-horizontal" width=150px>
 						<div class="form-group">
