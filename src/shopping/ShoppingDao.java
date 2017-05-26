@@ -148,6 +148,22 @@ public class ShoppingDao {
 
         this.ps_.executeUpdate();
     }
+    public void insertItem(String itemID,String itemName,String itemImage,int price,String itemCategory)throws SQLException{
+    	this.ps_ = this.con_.prepareStatement("insert into item(item_id,item_name,item_img,price,category) values (?,?,?,?,?)");
+    	this.ps_.setString(1, itemID);
+    	this.ps_.setString(2, itemName);
+    	this.ps_.setString(3, itemImage);
+    	this.ps_.setInt(4, price);
+    	this.ps_.setString(5, itemCategory);
+    	System.out.println(ps_);
+    	this.ps_.executeUpdate();
+    }
+    public void insertItemStock(String itemID,int itemStock)throws SQLException{
+    	this.ps_ = this.con_.prepareStatement("insert into stock(item_id,quantity) values (?,?)");
+    	this.ps_.setString(1, itemID);
+    	this.ps_.setInt(2, itemStock);
+    	this.ps_.executeUpdate();
+    }
 
     /**
      * コネクションをクローズします.

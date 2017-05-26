@@ -99,7 +99,7 @@
 					<td><%=bean.getItemId()%></td>
 					<%-- 商品名 --%>
 					<td><%=bean.getItemName()%></td>
-					<td><img src="img/<%=bean.getItemImg()%>" width=100%
+					<td><img src="<%=bean.getItemImg()%>" width=100%
 						class="img-responsive" /></td>
 					<%-- 価格 --%>
 					<td class="int"><%=bean.getPrice()%></td>

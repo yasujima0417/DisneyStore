@@ -96,6 +96,9 @@ public class LoginServlet extends HttpServlet {
             // ③-1-1 ログイン画面で入力されたIDとパスワードを取得
             String id = request.getParameter("id");
             String pass = request.getParameter("pass");
+            System.out.println("ここ"+id);
+            System.out.println("こっち"+pass);
+
 
             // ③-1-2 ユーザ情報をモデルに格納するために指示
             // ③-1-3 ログイン処理クラスをインスタンス化
