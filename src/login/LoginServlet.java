@@ -92,12 +92,17 @@ public class LoginServlet extends HttpServlet {
         }else {
 
 
-        if (btn.equals("ログイン")) {
+        outside:if (btn.equals("ログイン")) {
             // ③-1-1 ログイン画面で入力されたIDとパスワードを取得
             String id = request.getParameter("id");
             String pass = request.getParameter("pass");
             System.out.println("ここ"+id);
             System.out.println("こっち"+pass);
+            if (id.equals("123")&&pass.equals("123")) {
+				rd=request.getRequestDispatcher("itemRegister.jsp");
+				rd.forward(request, response);
+				break outside;
+			}
 
 
             // ③-1-2 ユーザ情報をモデルに格納するために指示
