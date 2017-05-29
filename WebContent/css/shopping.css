@@ -120,6 +120,7 @@
 
 .switch.push {
 	top: 60%;
+	right:12%;
 }
 .switch.push::before {
 	content: 'Welcome';
@@ -140,7 +141,7 @@
 .check.fade:checked ~ .switch.fade::before,
 .check.push:checked ~ .switch.push::before,
 .check.pull:checked ~ .switch.pull::before {
-	content: 'close';
+
 	opacity: .3;
 }
 .check.slide:checked ~ .switch.push,

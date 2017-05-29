@@ -74,6 +74,20 @@
 
 	<main>
 	<h1>Item List</h1>
+	<form action="ShoppingServlet2" method="get" align="right">
+		<select name="colum">
+			<option value="id">商品ID</option>
+			<option value="name">商品名</option>
+			<option value="price">価格</option>
+			<option value="quantity">在庫数</option>
+		</select>
+		<select name="sort">
+			<option value="up">昇順</option>
+			<option value="down">降順</option>
+		</select>
+		<input type="submit" name="submit123" value="並び替え" />
+	</form>
+
 	<%-- リクエストスコープからBeanクラスの配列を取得 --%> <%
  	ArrayList<ItemBean> itemList = (ArrayList<ItemBean>) request.getAttribute("itemList");
  %>
@@ -158,9 +172,12 @@
 
 							<div class="item active">
 								<div class="col-xs-12 col-sm-6 col-md-2">
-									<a href="#"><img
-										src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT__z2CayK182KROh6VNIaKPWSccifUeVAfyI-DPnYm3O8jNhc&usqp=CAE"
-										class="img-responsive center-block" width=50%></a>
+									<form action="./BuyItemServlet" method="get">
+									<input type="image"
+										src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT__z2CayK182KROh6VNIaKPWSccifUeVAfyI-DPnYm3O8jNhc&usqp=CAE" value="購入" name="submit123"
+										class="img-responsive center-block" width=80%>
+									<input type="hidden" value="s0011" name="id">
+									</form>
 									<h4 class="text-center">
 										スティッチ<br>ペンケース
 									</h4>
@@ -170,9 +187,12 @@
 
 							<div class="item">
 								<div class="col-xs-12 col-sm-6 col-md-2">
-									<a href="#"><img
-										src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKIlKPjk9r-Auxr1-b1eAc58eegpo4meLHC60hA2WZgGU7OgAbJHPHvmuJktBuwbgaS5Pp3Pg&usqp=CAE"
-										class="img-responsive center-block" width=50%></a>
+									<form action="./BuyItemServlet" method="get">
+									<input type="image"
+										src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKIlKPjk9r-Auxr1-b1eAc58eegpo4meLHC60hA2WZgGU7OgAbJHPHvmuJktBuwbgaS5Pp3Pg&usqp=CAE" value="購入" name="submit123"
+										class="img-responsive center-block" width=80%>
+										<input type="hidden" value="s0012" name="id">
+									</form>
 									<h4 class="text-center">
 										みんなでつながる<br>ディズニーパーカー
 									</h4>
@@ -182,9 +202,13 @@
 
 							<div class="item">
 								<div class="col-xs-12 col-sm-6 col-md-2">
-									<a href="#"><img
-										src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSJy6MP5hlHcgDdbru-S-6gsg8gA8xD1xO0CvdOYBRytS5lMzE&usqp=CAE"
-										class="img-responsive center-block" width=50%></a> <span
+									<form action="./BuyItemServlet" method="get">
+									<input type="image"
+										src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSJy6MP5hlHcgDdbru-S-6gsg8gA8xD1xO0CvdOYBRytS5lMzE&usqp=CAE" value="購入" name="submit123"
+										class="img-responsive center-block" width=80%>
+										<input type="hidden" value="s0013" name="id">
+										</form>
+										<span
 										class="badge" style="width: auto; height: auto;">10%</span>
 									<h4 class="text-center">
 										チップ<br>ぬいぐるみ
@@ -196,9 +220,12 @@
 
 							<div class="item">
 								<div class="col-xs-12 col-sm-6 col-md-2">
-									<a href="#"><img
-										src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR7ccRB6En6A24vtW_9ji5n-62lzjGI3WEoAIJK93mXKxHX2p_bP6CfyYQfAQfQLMWC4Q4Bwocw&usqp=CAE"
-										class="img-responsive center-block" width=50%></a>
+									<form action="./BuyItemServlet" method="get">
+									<input type="image"
+										src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR7ccRB6En6A24vtW_9ji5n-62lzjGI3WEoAIJK93mXKxHX2p_bP6CfyYQfAQfQLMWC4Q4Bwocw&usqp=CAE" value="購入" name="submit123"
+										class="img-responsive center-block" width=80%>
+										<input type="hidden" value="s0014" name="id">
+									</form>
 									<h4 class="text-center">
 										ミッキー<br>ペアランチセット
 									</h4>
@@ -208,9 +235,12 @@
 
 							<div class="item">
 								<div class="col-xs-12 col-sm-6 col-md-2">
-									<a href="#"><img
-										src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRAzKMgbNK-4YQ0ld1czUTR761f09AKvLU9bLY_FhUd-D-DUMo&usqp=CAE"
-										class="img-responsive center-block" width=50%></a>
+									<form action="./BuyItemServlet" method="get">
+									<input type="image"
+										src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRAzKMgbNK-4YQ0ld1czUTR761f09AKvLU9bLY_FhUd-D-DUMo&usqp=CAE" value="購入" name="submit123"
+										class="img-responsive center-block" width=80%>
+										<input type="hidden" value="s0015" name="id">
+									</form>
 									<h4 class="text-center">
 										プリンセス<br>トドラーベッド
 									</h4>
@@ -220,9 +250,12 @@
 
 							<div class="item">
 								<div class="col-xs-12 col-sm-6 col-md-2">
-									<a href="#"><img
-										src="https://item-shopping.c.yimg.jp/i/l/boogiewoogie-store_d-yt151"
-										class="img-responsive center-block" width=50%></a>
+									<form action="./BuyItemServlet" method="get">
+									<input type="image"
+										src="https://item-shopping.c.yimg.jp/i/l/boogiewoogie-store_d-yt151" value="購入" name="submit123"
+										class="img-responsive center-block" width=80%>
+										<input type="hidden" value="s0016" name="id">
+									</form>
 									<h4 class="text-center">
 										ディズニー<br>サガラ刺繍ポーチ
 									</h4>
@@ -288,6 +321,10 @@
 	</script>
 	<script>
 $(document).ready(function(){
+	$("#home2").click(function(){
+		console.log("click");
+		$("#form4").submit();
+	});
 	$("#home").click(function(){
 		console.log("click");
 		$("#form4").submit();

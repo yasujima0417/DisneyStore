@@ -39,7 +39,7 @@ public class BuyItemServlet extends HttpServlet {
 
         // GETメソッドのパラメータ名を取得
         Enumeration<String> names = request.getParameterNames();
-
+        System.out.println("ゲットネーム："+names);
         String name;		// 現在のパラメータ名
         String item_id = "";		// 商品ID
         String purchased_num;	// 購入数
@@ -47,10 +47,21 @@ public class BuyItemServlet extends HttpServlet {
         // 購入ボタンがクリックされた場所を特定
         // 今回のサンプルプログラムの場合、クリックされた購入ボタンの値（value）と、リストボックスの値が取得できる
         // 購入ボタンをクリックした後のURLにパラメータが記載されています
+        if ((request.getParameter("submit123")).equals("購入")&&!(request.getParameter("submit123")).equals(null)) {
+        	String id = request.getParameter("id");
+        	System.out.println("アイデー："+id);
+        	purchased_num="1";
+        	Shopping shopping = new Shopping();
+        	ItemBean item_bean = shopping.getItem(id);
+        	request.setAttribute("item_bean", item_bean);
+            request.setAttribute("purchased_num", purchased_num);
+
+		}else{
         while (names.hasMoreElements()) {
             // 渡ってきたパラメータを順番に処理
             // パラメータ名を取得
             name = names.nextElement();
+            System.out.println("名前："+name);
 
             // 購入ボタンがクリックされている場合は「購入」のパラメータが取得できる
             if ("購入".equals(request.getParameter(name))) {
@@ -71,7 +82,7 @@ public class BuyItemServlet extends HttpServlet {
         // 商品一覧をリクエストスコープの属性にセット
         request.setAttribute("item_bean", item_bean);
         request.setAttribute("purchased_num", purchased_num);
-
+		}
         // 購入確認画面に移動
         RequestDispatcher rd = request.getRequestDispatcher("./jsp/purchase_confirm.jsp");
         rd.forward(request, response);

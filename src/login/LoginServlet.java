@@ -1,6 +1,7 @@
 package login;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -75,7 +76,7 @@ public class LoginServlet extends HttpServlet {
 			rd.forward(request, response);
 		}*/
 
-        if (btn.equals("登録")) {
+        outside2:if (btn.equals("登録")) {
         	String userId = request.getParameter("userId");
             System.out.println(userId);
             String userPassword = request.getParameter("userPassword");
@@ -86,7 +87,15 @@ public class LoginServlet extends HttpServlet {
             System.out.println(userOld);
 
         	LoginDB login = new LoginDB();
-        	login.insertUserData(userId,userPassword,userName,userOld);
+        	try {
+				login.insertUserData(userId,userPassword,userName,userOld);
+			} catch (SQLException e) {
+				// TODO 自動生成された catch ブロック
+				session.setAttribute("error", "on");
+				rd=request.getRequestDispatcher("user_registration.jsp");
+				rd.forward(request, response);
+				break outside2;
+			}
         	rd=request.getRequestDispatcher("./");
         	rd.forward(request, response);
         }else {

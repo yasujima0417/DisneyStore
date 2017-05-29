@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -81,13 +82,15 @@ public class AdministratorServlet extends HttpServlet {
 
 					dao.insertItem(itemID,itemName,itemImage,item_price,itemCategory);
 					dao.insertItemStock(itemID, itemStock);
-					response.sendRedirect("itemRegister.jsp");
+
 				} catch (SQLException e1) {
 					// TODO 自動生成された catch ブロック
 					e1.printStackTrace();
 				}
-            }
 
+            }
+			RequestDispatcher rd = request.getRequestDispatcher("jsp/itemRegisterFinish.jsp");
+	        rd.forward(request, response);
 
 			System.out.println("line:"+line);
 

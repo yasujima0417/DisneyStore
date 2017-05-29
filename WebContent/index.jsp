@@ -17,7 +17,7 @@
     </head>
 
     <body class="login">
-
+	<%session.setAttribute("error", "off"); %>
 	<input type="checkbox" class="check push" id="checked-push">
 
 
@@ -41,7 +41,7 @@
                     <label class="ion-locked" for="pass"></label>
                 </div>
 
-					<a href=jsp/user_registration.jsp>新規登録</a>
+					<a href=user_registration.jsp>新規登録</a>
 
                     <input class="common_button" type="submit" name="submit123"  value="ログイン"/>
 

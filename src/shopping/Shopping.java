@@ -43,6 +43,7 @@ public class Shopping {
                 System.out.println("itembean: " + item_bean);
                 // Beanクラスをリストに追加
                 bean_list.add(item_bean);
+
             }
 
         } catch (SQLException sqle) {

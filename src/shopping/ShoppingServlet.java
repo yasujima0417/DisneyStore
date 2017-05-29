@@ -68,6 +68,7 @@ public class ShoppingServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
+
         // 商品一覧を取得
 
 
@@ -77,10 +78,13 @@ public class ShoppingServlet extends HttpServlet {
             System.out.println("item_list" + item_list);
 
             // 商品一覧をリクエストスコープの属性にセット
+            HttpSession session = request.getSession();
 
+            session.setAttribute("category", "off");
 
 
             request.setAttribute("itemList", item_list);
+            session.setAttribute("itemlist2", item_list);
 
             RequestDispatcher rd = request.getRequestDispatcher("./jsp/itemList.jsp");
             rd.forward(request, response);

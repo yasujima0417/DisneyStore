@@ -29,13 +29,17 @@
 		<div class="container-fluid" >
 			<div class="row">
 				<div class="col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10" style="background:rgba(255,255,255,0.8);margin-top:5%;padding-top:2%;">
-					<form role="form" action="../LoginServlet" method="post"
+					<form role="form" action="LoginServlet" method="post"
 						class="form-horizontal" width=150px>
 						<div class="form-group">
 							<label for="id" class="control-label col-md-3">ログインID</label>
 							<div class="col-md-offset-1 col-md-6">
 								<input required pattern="^[0-9A-Za-z]+$" name="userId"
 									type="text" class="form-control" placeholder="ID" />
+									<%if(session.getAttribute("error").equals("on")){%>
+									<p style="color:red;">ログインIDはすでに使用されています。</p>
+									<%request.setAttribute("error", "off"); %>
+									<%} %>
 								<p class="help-block">ログインIDを入力してください。</p>
 							</div>
 						</div>
@@ -68,7 +72,7 @@
 								<button type="submit" class="btn btn-default" name="submit123"
 									value="登録">登録</button>
 								<button type="reset" class="btn btn-default">リセット</button>
-								<span style="text-align: right;"> <a href="../"
+								<span style="text-align: right;"> <a href="./"
 									style="color: black;">戻る</a>
 								</span>
 							</div>

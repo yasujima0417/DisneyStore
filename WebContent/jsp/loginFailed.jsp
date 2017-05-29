@@ -18,7 +18,8 @@
         </form>
     	</div>
     	<div>
-    		<img src="https://vignette4.wikia.nocookie.net/mugen/images/f/f7/Mickey-mushroom.gif/revision/latest?cb=20150624113657"/>
+    		<img src="https://farm6.static.flickr.com/5712/30428202375_56f450a1f4_b.jpg" style=" transform: scale(-1, 1);"/>
+    		<img src="https://farm6.static.flickr.com/5712/30428202375_56f450a1f4_b.jpg" align="right"style="float:right;"/>
     	</div>
     </body>
 </html>

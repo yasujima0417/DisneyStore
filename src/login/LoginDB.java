@@ -39,16 +39,10 @@ public class LoginDB extends Login {
         }
         return bean;
     }
-    public LoginUserBean insertUserData(String userId,String userPassword,String userName,int userOld){
+    public void insertUserData(String userId,String userPassword,String userName,int userOld)throws SQLException{
     	LoginUserBean a = null;
     	ResultSet rs;
-    	try {
 			LoginDao dao=new LoginDao();
 			dao.insertUserData(userId, userPassword, userName, userOld);
-		} catch (SQLException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-    	return a;
     }
 }
