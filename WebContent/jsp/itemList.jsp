@@ -21,6 +21,12 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext"
 	rel="stylesheet">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link href="css/lightbox.css" type="text/css" rel="stylesheet" media="all" />
+
+
+
+
 </head>
 <body>
 	<%-- TODO:2-1 jsp:includeでヘッダー画面を読み込む --%>
@@ -85,16 +91,18 @@
 			<option value="up">昇順</option>
 			<option value="down">降順</option>
 		</select>
+
 		<input type="submit" name="submit123" value="並び替え" />
 	</form>
 
 	<%-- リクエストスコープからBeanクラスの配列を取得 --%> <%
- 	ArrayList<ItemBean> itemList = (ArrayList<ItemBean>) request.getAttribute("itemList");
+ 	ArrayList<ItemBean> itemList = (ArrayList<ItemBean>) session.getAttribute("itemList");
  %>
 
 	<form action="./BuyItemServlet">
-		<table class="shopping_table">
+		<table class="shopping_table" id="result">
 			<tbody>
+				<thead>
 				<tr>
 					<th>商品ID</th>
 					<th>商品名</th>
@@ -103,9 +111,11 @@
 					<th>在庫数</th>
 					<th>数量</th>
 				</tr>
+				</thead>
 
 				<%-- Beanの要素数分（商品の種類分）テーブルを作成 --%>
 				<%
+				int a = 0;
 					for (ItemBean bean : itemList) {
 				%>
 				<tr>
@@ -113,8 +123,11 @@
 					<td><%=bean.getItemId()%></td>
 					<%-- 商品名 --%>
 					<td><%=bean.getItemName()%></td>
-					<td><img src="<%=bean.getItemImg()%>" width=100%
-						class="img-responsive" /></td>
+					<td>
+					<a href="<%=bean.getItemImg()%>" data-lightbox="sample<%=a %>" data-title="">
+					<img src="<%=bean.getItemImg()%>" width=100% class="img-responsive" />
+					</a>
+					</td>
 					<%-- 価格 --%>
 					<td class="int"><%=bean.getPrice()%></td>
 					<%-- 数量（在庫） --%>
@@ -133,8 +146,11 @@
 								}
 							%>
 					</select></td>
-					<td class="button"><input class="common_button" type="submit"
-						value="購入" name="<%=bean.getItemId()%>"></td>
+					<td class="button"><input class="btn btn-danger" type="submit"
+						value="購入" name="<%=bean.getItemId()%>">
+						<input type="hidden" name="submit123" value="" />
+
+					</td>
 					<%
 						} else {
 					%>
@@ -144,11 +160,11 @@
 					%>
 				</tr>
 				<%
+				++a;
 					}
 				%>
 			</tbody>
 		</table>
-
 		<a class="common_button" href="./">戻る</a>
 	</form>
 	</main>
@@ -349,7 +365,34 @@ $(document).ready(function(){
 <div style="overflow: hidden; position: relative;">
 <p style="text-align:center;"><img src="http://www.disney.co.jp/content/dam/disney/images/studio/beautyandbeast/logo/logo_bb_01.png" width=25% style=" position: absolute;left: 10%;top: 25%;"/><iframe width="660" height="415" src="https://www.youtube.com/embed/Yxhgx-PBF88" frameborder="0" allowfullscreen style="margin-left:35%;"></iframe></p>
 </div>
+<p id="pageTop"><a href="#"><img src="https://pics.prcm.jp/e8b6212ec703a/50739648/png/50739648.png" width=9% /></a></p>
+<script>
+$(function(){
+	var topBtn=$('#pageTop');
+	topBtn.hide();
 
+	//◇ボタンの表示設定
+	$(window).scroll(function(){
+	  if($(this).scrollTop()>80){
+	    //---- 画面を80pxスクロールしたら、ボタンを表示する
+	    topBtn.fadeIn();
+	  }else{
+	    //---- 画面が80pxより上なら、ボタンを表示しない
+	    topBtn.fadeOut();
+	  }
+	});
+
+	// ◇ボタンをクリックしたら、スクロールして上に戻る
+	topBtn.click(function(){
+	  $('body,html').animate({
+	  scrollTop: 0},500);
+	  return false;
+	});
+
+	});
+</script>
+
+<script src="js/lightbox.js" type="text/javascript"></script>
 </body>
 <footer class="bg-danger">
 	<div class="footermenu">

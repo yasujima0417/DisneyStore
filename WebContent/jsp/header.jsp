@@ -2,7 +2,7 @@
 <jsp:useBean id="login_user_bean" scope="session" class="login.LoginUserBean"/>
 
 <%-- header --%>
-
+<div id="header">
     <%-- ログイン済みの場合はID を表示 --%>
 	<a href="http://localhost:8080/DisneyStore/index.jsp"><img class="hidden-xs" width=25%   src="http://store.disney.co.jp/images/common/img_shoplogo_pc.png" style="margin-left:35% "></a>
     <nav class="navbar navbar-default" style="background:#db0000; color:white;" >
@@ -39,9 +39,9 @@
         <a href="ShoppingServlet?submit=history">購入履歴</a>
         <a href="LoginServlet?submit=logout">ログアウト</a>
       <div class="input-group">
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" id="search">
              <span class="input-group-btn">
-              <button class="btn btn-primary" type="submit">
+              <button class="btn btn-primary"  id="button">
                 <i class='glyphicon glyphicon-search'></i>
               </button>
             </span>
@@ -67,4 +67,4 @@
 <input type=hidden name="category" value="ぬいぐるみ">
 </form>
 
-
+</div>

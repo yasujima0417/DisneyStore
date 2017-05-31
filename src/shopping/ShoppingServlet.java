@@ -83,7 +83,7 @@ public class ShoppingServlet extends HttpServlet {
             session.setAttribute("category", "off");
 
 
-            request.setAttribute("itemList", item_list);
+            session.setAttribute("itemList", item_list);
             session.setAttribute("itemlist2", item_list);
 
             RequestDispatcher rd = request.getRequestDispatcher("./jsp/itemList.jsp");

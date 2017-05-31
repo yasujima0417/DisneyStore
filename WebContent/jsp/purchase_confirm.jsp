@@ -30,6 +30,7 @@
                     <th>価格</th>
                     <th>在庫数</th>
                     <th>購入数</th>
+
                 </tr>
                 <tr>
                     <%-- リクエストスコープから表示する値を取得 --%>
@@ -39,12 +40,13 @@
                     <td class="int"><jsp:getProperty name="item_bean" property="price" /></td>
                     <td class="int"><jsp:getProperty name="item_bean" property="quantity" /></td>
                     <td class="int"><%=request.getAttribute("purchased_num")%></td>
+
                     <td class="button">
                         <input class="common_button" type="submit" value="購入する">
                         <% //TODO:2-5 hiddenでパラメータをセットしておく %>
                         <%-- 購入処理を行うため、hidden（画面には表示されない情報）に商品IDと購入数を設定しておく --%>
                         <input type="hidden" name="item_id" value="<jsp:getProperty property="itemId" name="item_bean"/>">
-                        <input type="hidden" name="item_quantity" value="<%= request.getAttribute("purchased_num")%>">
+                        <input type="hidden" name="item_quantity" value="<%=request.getAttribute("purchased_num")%>">
                     </td>
                 </tr>
             </tbody>

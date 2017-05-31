@@ -39,11 +39,12 @@ public class AdministratorServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		request.setCharacterEncoding("UTF-8");
+		String button = request.getParameter("button");
 		Part part = request.getPart("file");
         String name = this.getFileName(part);
         System.out.println(name);
-        part.write(getServletContext().getRealPath("/WEB-INF/uploaded") + "/" + name);
+        	part.write(getServletContext().getRealPath("/WEB-INF/uploaded") + "/" + name);
 
 
 		String[] data;
@@ -79,13 +80,19 @@ public class AdministratorServlet extends HttpServlet {
                 System.out.println(itemStock);
                 System.out.println("");
                 ShoppingDao dao = new ShoppingDao();
-
-					dao.insertItem(itemID,itemName,itemImage,item_price,itemCategory);
+                if (button.equals("登録")) {
+                	dao.insertItem(itemID,itemName,itemImage,item_price,itemCategory);
 					dao.insertItemStock(itemID, itemStock);
-
+				}
+				if (button.equals("在庫更新")) {
+					dao.updateQuantity(itemID, itemStock);
+				}
+				if (button.equals("すべて更新")) {
+					dao.updateAll(itemID, itemName, itemImage, item_price, itemCategory, itemStock);
+				}
 				} catch (SQLException e1) {
 					// TODO 自動生成された catch ブロック
-					e1.printStackTrace();
+					continue;
 				}
 
             }

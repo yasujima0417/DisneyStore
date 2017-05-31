@@ -148,12 +148,12 @@ public class ShoppingDao {
 
         this.ps_.executeUpdate();
     }
-    public void insertItem(String itemID,String itemName,String itemImage,int price,String itemCategory)throws SQLException{
+    public void insertItem(String itemID,String itemName,String itemImage,int item_price,String itemCategory)throws SQLException{
     	this.ps_ = this.con_.prepareStatement("insert into item(item_id,item_name,item_img,price,category) values (?,?,?,?,?)");
     	this.ps_.setString(1, itemID);
     	this.ps_.setString(2, itemName);
     	this.ps_.setString(3, itemImage);
-    	this.ps_.setInt(4, price);
+    	this.ps_.setInt(4, item_price);
     	this.ps_.setString(5, itemCategory);
     	System.out.println(ps_);
     	this.ps_.executeUpdate();
@@ -164,7 +164,26 @@ public class ShoppingDao {
     	this.ps_.setInt(2, itemStock);
     	this.ps_.executeUpdate();
     }
-
+    public void updateQuantity(String itemID,int itemStock)throws SQLException{
+    	this.ps_ = this.con_.prepareStatement("update stock set quantity = ? where item_id = ?");
+    	this.ps_.setInt(1, itemStock);
+    	this.ps_.setString(2, itemID);
+    	this.ps_.executeUpdate();
+    }
+    public void updateAll(String itemID,String itemName,String itemImage,int item_price,String itemCategory,int itemStock)throws SQLException{
+    	this.ps_ = this.con_.prepareStatement("update item set item_name = ?,item_img = ?,price = ?,category = ? where item_id = ?");
+    	this.ps_.setString(5, itemID);
+    	this.ps_.setString(1, itemName);
+    	this.ps_.setString(2, itemImage);
+    	this.ps_.setInt(3, item_price);
+    	this.ps_.setString(4, itemCategory);
+    	System.out.println(ps_);
+    	this.ps_.executeUpdate();
+    	this.ps_ = this.con_.prepareStatement("update stock set quantity = ? where item_id = ?");
+    	this.ps_.setInt(1, itemStock);
+    	this.ps_.setString(2, itemID);
+    	this.ps_.executeUpdate();
+    }
     /**
      * コネクションをクローズします.
      */

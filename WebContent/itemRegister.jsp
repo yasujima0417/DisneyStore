@@ -12,8 +12,13 @@
 	<h2>商品登録</h2>
 	<form action=AdministratorServlet method="post" enctype=multipart/form-data>
 		<input type="file" name="file" />
-		<input type="submit" id="selectFileSample5" value="登録"/>
+		<input type="submit" id="selectFileSample5" name="button" value="登録"/>
+		<input type="submit" id="selectFileSample5" name="button" value="在庫更新"/>
+		<input type="submit" id="selectFileSample5" name="button" value="すべて更新"/>
 	</form>
+	<br />
+	<br />
+
 	<a href="./">ログイン画面に戻る</a>
 </body>
 </html>

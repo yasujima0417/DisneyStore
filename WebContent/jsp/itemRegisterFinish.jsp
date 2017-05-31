@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>登録完了しました。</h1>
+	<h1>完了しました。</h1>
 	<a href="itemRegister.jsp">戻る</a>
 </body>
 </html>

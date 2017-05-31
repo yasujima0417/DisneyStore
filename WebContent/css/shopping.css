@@ -274,12 +274,12 @@ table.table_form {
     margin: 1rem auto;
     table-layout: fixed;
     word-wrap   : break-word;
-    border : .2rem solid #ccc;
-    background-color: hsl(0, 0%, 97%);
+    border : .2rem solid #ff8080;
+    background-color: #ffffbf;
 }
 
 th,td {
-    border : .2rem solid #ccc;
+    border : .2rem solid #ff8080;
 }
 
 .int {
@@ -624,4 +624,15 @@ span.disney{
 }
 .navbar{
 	background-color: #db0000;
+}
+#pageTop {
+  position: fixed;
+  bottom: 20px;
+  right: -500px;
+}
+
+
+#pageTop a:hover {
+  text-decoration: none;
+  opacity: 0.7;
 }
